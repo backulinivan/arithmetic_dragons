@@ -109,26 +109,9 @@ class SimpleTroll(Troll):
         return self.__quest
         
 
-class DecayTroll(Troll):
-    def __init__(self):
-        self._health = 120
-        self._attack = 34
-        self._color = 'коричневый'
-        self._experience_for_kill = 11
-        
-    def question(self):
-        x = randint(1, 200)
-        self.__quest = 'Разложи ' + str(x) + ' на множители и запиши их в строчку'      
-        def decay(x):
-            string = ''
-            for i in range(2, x//2):
-                if x % i == 0:
-                    string += str(i) + ', '
-            return(string[:len(string)-1])    
-        self.set_answer(decay(x))
-        return self.__quest                                       
+                          
 #FIXME здесь также должны быть описаны классы RedDragon и BlackDragon
 # красный дракон учит вычитанию, а чёрный -- умножению.
 
 
-enemy_types = [GreenDragon, RedDragon, BlackDragon, RandomTroll, SimpleTroll, DecayTroll]
+enemy_types = [GreenDragon, RedDragon, BlackDragon, RandomTroll, SimpleTroll]
