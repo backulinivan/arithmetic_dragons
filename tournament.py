@@ -3,11 +3,11 @@
 from enemies import *
 from hero import *
 
-def annoying_input(message =''):
+def annoying_input_int(message =''):
     answer = None
     while answer == None:
         try:
-            answer = input(message)
+            answer = int(input(message))
         except ValueError:
             print('Вы ввели недопустимые символы')
     return answer
